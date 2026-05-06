@@ -26,7 +26,6 @@ public class NotificationSweeper {
                 List<String> messages = redisTemplate.opsForList().range(key, 0, -1);
                 
                 if (messages != null && !messages.isEmpty()) {
-                    String userId = key.split(":")[1];
                     int count = messages.size();
                     String firstBot = messages.get(0).split(" ")[1];
 
